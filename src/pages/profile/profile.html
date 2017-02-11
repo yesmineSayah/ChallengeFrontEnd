@@ -1,6 +1,9 @@
 
 <ion-header>
   <ion-navbar color="primary">
+    <button ion-button menuToggle icon-only (click)="menuProfileRoute()">
+      <ion-icon name='menu'></ion-icon>
+    </button>
     <ion-title>
       Profile
     </ion-title>
@@ -8,30 +11,24 @@
 </ion-header>
 
 <ion-content >
-  <ion-card>
-
-    <img src="assets/img/bjork-live.jpg"/>
-
-    <ion-card-content>
-      <ion-card-title>
-        Björk
-      </ion-card-title>
-      <p>
-        Björk first came to prominence as one of the lead vocalists of the avant pop Icelandic sextet the Sugarcubes, but when...
-      </p>
-    </ion-card-content>
-
+  <ion-list>
     <ion-item>
-      <ion-icon name='musical-notes' item-left style="color: #d03e84"></ion-icon>
-      Albums
-      <ion-badge item-right>9</ion-badge>
+      <ion-avatar item-center>
+        <img src="https://pickaface.net/assets/images/slides/slide2.png">
+      </ion-avatar>
+      <h2>Nom et Prenom</h2>
+      <h3>Job</h3>
+      <p>Citation de sharity</p>
     </ion-item>
+  </ion-list>
 
-    <ion-item>
-      <ion-icon name='logo-twitter' item-left style="color: #55acee"></ion-icon>
-      Followers
-      <ion-badge item-right>260k</ion-badge>
-    </ion-item>
 
-  </ion-card>
+  <ion-list>
+    <ion-list-header>
+      Informations personnels
+    </ion-list-header>
+    <ion-item>Nom et Prenom</ion-item>
+    <ion-item>Email</ion-item>
+    <ion-item>Telephone</ion-item>
+  </ion-list>
 </ion-content>
