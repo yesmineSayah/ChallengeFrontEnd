@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MouvementsService } from '../../../services/mouvements.service';
 import { MouvementMenu } from '../menu/menu';
+import { LocalStorageService } from 'angular-2-local-storage';
 @Component({
   selector: 'app-mouvementmy',
   templateUrl: 'my.html',
@@ -9,11 +10,11 @@ import { MouvementMenu } from '../menu/menu';
 })
 export class MouvementMy {
 items: any;
-  constructor(public navCtrl: NavController, private service: MouvementsService) {
+  constructor(public navCtrl: NavController, private service: MouvementsService,private storage:LocalStorageService) {
 
   }
   ngOnInit(){
-    this.service.getMouvements().subscribe(data => {
+    this.service.getMouvementsByMember(this.storage.get('user')).subscribe(data => {
       this.items = data;
     });
   }

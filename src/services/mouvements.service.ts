@@ -13,7 +13,7 @@ export class MouvementsService {
     if (!this.storage.get('user')) {
       this.storage.set('user', {
         "_id": "589f17d21533b124b818b6f8",
-        "email": "dwd@jn.com",
+        "email": "heiyuki@live.fr",
         "salt": "8ac7hECL",
         "firstName": "khaled",
         "lastName": "Romdhane",
@@ -26,8 +26,8 @@ export class MouvementsService {
     }
     return this.http.get(hostUrl + "/api/mouvements").map(response => response.json());
   }
-  getMouvementsByAuthor(user) {
-    return this.http.get(hostUrl + "/api/mouvements/byauthor/" + user._id).map(response => response.json());
+  getMouvementsByMember(user) {
+    return this.http.get(hostUrl + "/api/mouvements/bymember/" + user._id).map(response => response.json());
   }
   createAuthorizationHeader(headers: Headers) {
     headers.append('Authorization', <string>this.storage.get("token"));
@@ -35,6 +35,9 @@ export class MouvementsService {
   createMouvement(mouvement) {
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
+    mouvement.admin = this.storage.get("user");
+    mouvement.members = [];
+    mouvement.members.push(this.storage.get("user"));
     return this.http.post(hostUrl + "/api/mouvements", mouvement, { headers: headers }).map(response => response.json());
   }
 }
