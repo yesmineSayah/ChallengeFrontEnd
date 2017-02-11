@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http,Headers} from '@angular/http';
 import {hostUrl} from './app.host';
 import "rxjs";
 import { LocalStorageService } from 'angular-2-local-storage';
+
 @Injectable()
 export class AuthService {
   http: any;
@@ -19,6 +20,15 @@ export class AuthService {
   }
 
   profile(){
-    
+
+  }
+  createAuthorizationHeader(headers: Headers) {
+    headers.append('Authorization',<string> this.storage.get("token"));
+  }
+
+  editProfile(user){
+    let headers = new Headers();
+   this.createAuthorizationHeader(headers);
+return this.http.put(hostUrl + "/secure/profile", user,{headers: headers}).map(response => response.json());
   }
 }
