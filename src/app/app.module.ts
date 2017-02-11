@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {AuthentificationComponent} from '../pages/authentification/authentification';
 import {InscriptionComponent} from '../pages/inscription/inscription';
-
+import {MouvementModule} from '../pages/mouvements/mouvement.module';
 @NgModule({
   declarations: [
     MyApp,

@@ -15,6 +15,10 @@ user : any={};
   }
  login()
 {
-  this.service.login(this.user).subscribe(data=>console.log(data));
+  this.service.login(this.user).subscribe(data=>{
+    if(data.success===true){
+      this.navCtrl.setRoot(TabsPage);
+    }
+  });
 }
 }
