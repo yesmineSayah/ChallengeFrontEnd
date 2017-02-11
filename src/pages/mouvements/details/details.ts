@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'app-mouvementdetails',
@@ -7,8 +7,9 @@ import { NavController } from 'ionic-angular';
 })
 export class MouvementDetails {
 
-  constructor(public navCtrl: NavController) {
-
+item:any;
+  constructor(public navCtrl: NavController,private NavParams:NavParams) {
+    this.item = NavParams.get('item');
   }
   ngOnInit(){
 

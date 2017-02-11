@@ -8,12 +8,18 @@ import {MouvementCreate} from '../mouvements/create/create';
 import {MouvementEdit} from '../mouvements/edit/edit';
 import {MouvementMyDetails} from '../mouvements/myDetails/myDetails';
 import {MouvementMy} from '../mouvements/myMouvements/my';
+import {MouvementMenu} from '../mouvements/menu/menu';
 import {ProfilePage} from '../profile/profile';
 @Component({
   templateUrl: 'tabs.html',
   entryComponents: [
     MouvementPage,
-    MouvementDetails,MouvementCreate,MouvementEdit,MouvementMyDetails,MouvementMy
+    MouvementDetails,
+    MouvementCreate,
+    MouvementEdit,
+    MouvementMyDetails,
+    MouvementMy,
+    MouvementMenu
   ]
 })
 export class TabsPage {
