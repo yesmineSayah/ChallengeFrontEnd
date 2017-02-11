@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import {AuthentificationComponent} from '../pages/authentification/authentification';
 import {InscriptionComponent} from '../pages/inscription/inscription';
 import {MouvementModule} from '../pages/mouvements/mouvement.module';
+import {ProfilePage} from '../pages/profile/profile';
 @NgModule({
   declarations: [
     MyApp,
@@ -16,7 +17,8 @@ import {MouvementModule} from '../pages/mouvements/mouvement.module';
     HomePage,
     TabsPage,
     AuthentificationComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ProfilePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -30,7 +32,8 @@ import {MouvementModule} from '../pages/mouvements/mouvement.module';
     HomePage,
     TabsPage,
     AuthentificationComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ProfilePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
