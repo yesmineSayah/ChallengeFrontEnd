@@ -7,23 +7,8 @@
 <ion-content>
   <ion-list>
     <ion-item>
-      <ion-label floating color="primary">Nom</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating color="primary">Prenom</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-
-  <ion-label floating color="primary">Date de naissance</ion-label>
-    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-
-    <ion-item>
-      <ion-label floating color="primary">Téléphone</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating color="primary">Email</ion-label>
+      <ion-input type="mail"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -38,5 +23,5 @@
   </ion-list>
 
 
-  <button ion-button block (click)="inscription()">Login</button>
+  <button ion-button block (click)="inscription()">Inscription</button>
 </ion-content>
