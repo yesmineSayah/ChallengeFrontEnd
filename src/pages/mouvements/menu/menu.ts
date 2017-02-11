@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { MouvementDetails } from '../details/details';
 import { MouvementMy } from '../myMouvements/my';
 import { MouvementPage } from '../index/index';
+import { MouvementCreate } from '../create/create';
 @Component({
   selector: 'app-mouvementmenu',
   templateUrl: 'menu.html'
@@ -18,6 +19,10 @@ export class MouvementMenu {
 
   indexRoute(){
     this.navCtrl.setRoot(MouvementPage,null,{animate:true,direction:"forward"});
+  }
+
+  createRoute(){
+    this.navCtrl.setRoot(MouvementCreate,null,{animate:true,direction:"forward"});
   }
 
   myRoute(){

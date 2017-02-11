@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {MouvementPage} from './index/index';
 import {MouvementDetails} from './details/details';
 import {MouvementCreate} from './create/create';

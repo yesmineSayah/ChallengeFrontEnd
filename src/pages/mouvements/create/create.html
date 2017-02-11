@@ -1,17 +1,25 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Details</ion-title>
+    <button ion-button menuToggle icon-only (click)="menuRoute()">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>Créer un mouvement</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content  padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content padding>
+  <ion-item>
+    <ion-label floating color="primary">Nom</ion-label>
+    <ion-input type="text" [(ngModel)]="mouvement.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating color="primary">Description</ion-label>
+    <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label floating color="primary">Description</ion-label>
+      <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
+    </ion-item>
+  </ion-list>
 </ion-content>
