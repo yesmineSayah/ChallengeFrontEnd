@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import {hostUrl} from './app.host';
 import "rxjs";
 import { LocalStorageService } from 'angular-2-local-storage';
@@ -13,12 +13,12 @@ export class MouvementsService {
     if (!this.storage.get('user')) {
       this.storage.set('user', {
         "_id": "589f17d21533b124b818b6f8",
-        "email": "heiyuki@live.fr",
+        "email": "dwd@jn.com",
         "salt": "8ac7hECL",
         "firstName": "khaled",
-        "lastName":"Romdhane",
-        "tel":"24998628",
-        "adresse":"tahar haddad"
+        "lastName": "Romdhane",
+        "tel": "24998628",
+        "adresse": "tahar haddad"
       });
     }
     if (!this.storage.get('token')) {
@@ -28,5 +28,13 @@ export class MouvementsService {
   }
   getMouvementsByAuthor(user) {
     return this.http.get(hostUrl + "/api/mouvements/byauthor/" + user._id).map(response => response.json());
+  }
+  createAuthorizationHeader(headers: Headers) {
+    headers.append('Authorization', <string>this.storage.get("token"));
+  }
+  createMouvement(mouvement) {
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+    return this.http.post(hostUrl + "/api/mouvements", mouvement, { headers: headers }).map(response => response.json());
   }
 }

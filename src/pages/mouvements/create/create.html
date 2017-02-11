@@ -8,18 +8,54 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating color="primary">Nom</ion-label>
-    <ion-input type="text" [(ngModel)]="mouvement.title"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating color="primary">Description</ion-label>
-    <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
-  </ion-item>
   <ion-list>
+    <ion-list-header color="primary">Détails du mouvement</ion-list-header>
+    <ion-item>
+      <ion-label floating color="primary">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="mouvement.title"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label floating color="primary">Description</ion-label>
       <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
     </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">address</ion-label>
+      <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
+    </ion-item>
   </ion-list>
+  <ion-list>
+    <ion-list-header color="primary">Besoin <button ion-button (click)="toggleBesoin()" [hidden]="add" item-right>Ajouter Un Besoin</button></ion-list-header>
+
+
+    <ion-card *ngFor="let n of mouvement.needs" (click)="showConfirm(n)">
+      <ion-card-header>
+        {{n.title}} (Retirer)
+      </ion-card-header>
+      <ion-card-content>
+        {{n.description}}
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card [hidden]="!add">
+      <ion-card-header>
+        Besoin
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label floating color="primary">Besoin</ion-label>
+          <ion-input type="text" [(ngModel)]="besoin.title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating color="primary">Description Besoin</ion-label>
+          <ion-textarea [(ngModel)]="besoin.description"></ion-textarea>
+        </ion-item>
+        <button ion-button (click)="addBesoin()">Ajouter</button>
+        <button ion-button color="danger" (click)="toggleBesoin()">Annuler</button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+<button ion-button (click)="create()" [hidden]="add" item-left>Créer</button>
+<button ion-button (click)="cancel()" color="danger" [hidden]="add" item-left>Annuler</button>
+
 </ion-content>
