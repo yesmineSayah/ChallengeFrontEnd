@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http,Headers} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import {hostUrl} from './app.host';
 import "rxjs";
 import { LocalStorageService } from 'angular-2-local-storage';
@@ -19,16 +19,22 @@ export class AuthService {
     return this.http.post(hostUrl + "/api/authentification/register", user).map(response => response.json());
   }
 
-  profile(){
-
+  profile() {
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+    return this.http.get(hostUrl + "/secure/profile", { headers: headers }).map(response => response.json());
   }
   createAuthorizationHeader(headers: Headers) {
-    headers.append('Authorization',<string> this.storage.get("token"));
+    headers.append('Authorization', <string>this.storage.get("token"));
   }
 
-  editProfile(user){
+  editProfile(user) {
     let headers = new Headers();
-   this.createAuthorizationHeader(headers);
-return this.http.put(hostUrl + "/secure/profile", user,{headers: headers}).map(response => response.json());
+    this.createAuthorizationHeader(headers);
+    return this.http.put(hostUrl + "/secure/profile", user, { headers: headers }).map(() => {
+      this.profile().subscribe(data => {
+        this.storage.set("user", data);
+      });
+    });
   }
 }

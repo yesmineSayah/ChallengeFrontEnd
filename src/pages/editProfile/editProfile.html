@@ -9,31 +9,31 @@
 
   <ion-item>
     <ion-label>Nom</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.lastName"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Prenom</ion-label>
-    <ion-input type="password"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.firstName"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Adresse</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.adresse"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>téléphone</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.tel"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item *ngIf="user.citation">
     <ion-label>Citation</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.citation"></ion-input>
   </ion-item>
 
 
 </ion-list>
-<button ion-button icon-right>
+<button ion-button icon-right (click)="editProfile()">
 Enregistrer
 <ion-icon name="book"></ion-icon>
 </button>
