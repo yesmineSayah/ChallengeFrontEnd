@@ -22,7 +22,7 @@ export class MouvementsService {
       });
     }
     if (!this.storage.get('token')) {
-      this.storage.set('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlaXl1a2lAbGl2ZS5mciIsInBhc3N3b3JkIjoiJDJhJDEwJGw4dXJ1ckFFd2VGQnVFbWNEclVDLmU2empOYnhuRWpVRUV2L0lING00UTBodUJud0hoR0dXIiwiaWF0IjoxNDg2ODQyNzE1LCJleHAiOjE0ODY4NDYzMTV9.LrS9GGsgzuywXKmL4HdS-eQrolB5K88SNKyBjeuVV3U");
+      this.storage.set('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlaXl1a2lAbGl2ZS5mciIsInBhc3N3b3JkIjoiJDJhJDEwJGw4dXJ1ckFFd2VGQnVFbWNEclVDLmU2empOYnhuRWpVRUV2L0lING00UTBodUJud0hoR0dXIiwiaWF0IjoxNDg2ODU0OTg5LCJleHAiOjE0ODY4NTg1ODl9.RpGe8c_xO4esVy1OUjw0U6aJicLo6PRVnEnxVHQ-ne0");
     }
     return this.http.get(hostUrl + "/api/mouvements").map(response => response.json());
   }
@@ -35,9 +35,6 @@ export class MouvementsService {
   createMouvement(mouvement) {
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
-    mouvement.admin = this.storage.get("user");
-    mouvement.members = [];
-    mouvement.members.push(this.storage.get("user"));
-    return this.http.post(hostUrl + "/api/mouvements", mouvement, { headers: headers }).map(response => response.json());
+    return this.http.post(hostUrl + "/secure/mouvements", mouvement, { headers: headers }).map(() => {});
   }
 }

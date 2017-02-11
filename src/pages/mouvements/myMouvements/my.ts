@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { MouvementsService } from '../../../services/mouvements.service';
 import { MouvementMenu } from '../menu/menu';
 import { LocalStorageService } from 'angular-2-local-storage';
+import { MouvementMyDetails } from '../myDetails/myDetails';
 @Component({
   selector: 'app-mouvementmy',
   templateUrl: 'my.html',
@@ -20,5 +21,8 @@ items: any;
   }
   menuRoute(){
     this.navCtrl.push(MouvementMenu);
+  }
+  detailsRoute(item){
+    this.navCtrl.push(MouvementMyDetails,{item:item});
   }
 }
