@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle icon-only (click)="menuProfileRoute()">
@@ -10,13 +9,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-list>
     <ion-item>
       <ion-avatar item-center>
         <img src="https://pickaface.net/assets/images/slides/slide2.png">
       </ion-avatar>
-      <h2>Nom et Prenom</h2>
+      <h2>{{user.firstName}} {{user.lastName}}</h2>
       <h3>Job</h3>
       <p>Citation de sharity</p>
     </ion-item>
@@ -24,11 +23,38 @@
 
 
   <ion-list>
-    <ion-list-header>
+    <ion-list-header style="font-size:15px;" color="primary">
       Informations personnels
     </ion-list-header>
-    <ion-item>Nom et Prenom</ion-item>
-    <ion-item>Email</ion-item>
-    <ion-item>Telephone</ion-item>
+    <ion-item>Nom :
+      <ion-note item-right>
+        {{user.lastName}}
+      </ion-note>
+    </ion-item>
+
+    <ion-item>Prenom : <ion-note item-right>
+      {{user.firstName}}
+    </ion-note></ion-item>
+    <ion-item>Adresse :
+      <ion-note item-right>
+        {{user.adresse}}
+      </ion-note>
+       </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header color="primary" style="font-size:15px;">
+      Contact
+    </ion-list-header>
+    <ion-item>Email :
+      <ion-note item-right>
+        {{user.email}}
+      </ion-note>
+      </ion-item>
+    <ion-item>Telephone :
+      <ion-note item-right>
+          {{user.tel}}
+      </ion-note>
+    </ion-item>
   </ion-list>
 </ion-content>

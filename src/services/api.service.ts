@@ -17,4 +17,8 @@ export class AuthService {
   inscription(user) {
     return this.http.post(hostUrl + "/api/authentification/register", user).map(response => response.json());
   }
+
+  profile(){
+    
+  }
 }

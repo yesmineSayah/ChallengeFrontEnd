@@ -10,6 +10,8 @@ import {InscriptionComponent} from '../pages/inscription/inscription';
 import {MouvementModule} from '../pages/mouvements/mouvement.module';
 import {ProfilePage} from '../pages/profile/profile';
 import { LocalStorageModule } from 'angular-2-local-storage';
+import {ProfileMenu} from '../pages/menuProfile/menuProfile';
+import {EditProfilePage} from '../pages/editProfile/editProfile';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     TabsPage,
     AuthentificationComponent,
     InscriptionComponent,
-    ProfilePage
+    ProfilePage,
+    ProfileMenu,
+    EditProfilePage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -39,7 +44,9 @@ import { LocalStorageModule } from 'angular-2-local-storage';
     TabsPage,
     AuthentificationComponent,
     InscriptionComponent,
-    ProfilePage
+    ProfilePage,
+    ProfileMenu,
+    EditProfilePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
