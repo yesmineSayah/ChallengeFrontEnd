@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import {TabsPage} from '../tabs/tabs';
 import { NavController , AlertController} from 'ionic-angular';
+import {AuthService} from '../../services/api.service';
 
 @Component({
   selector: 'app-authentification',
-  templateUrl: 'authentification.html'
+  templateUrl: 'authentification.html',
+  providers : [AuthService]
 })
 export class AuthentificationComponent {
-
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController) {
+user : any={};
+  constructor(public navCtrl: NavController,private alertCtrl: AlertController,private service:AuthService) {
 
   }
-
-
+ login()
+{
+  this.service.login(this.user).subscribe(data=>console.log(data));
+}
 }

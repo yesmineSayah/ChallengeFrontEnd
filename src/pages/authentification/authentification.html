@@ -11,12 +11,12 @@
 
     <ion-item>
       <ion-label floating color="primary">Email</ion-label>
-      <ion-input type="mail"></ion-input>
+      <ion-input type="mail" [(ngModel)]="user.email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating color="primary">mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
   </ion-list>
 

@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import {PostService} from '../../services/api.service';
 import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
-  providers : [PostService]
+  templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private postService:PostService) {
+  constructor(public navCtrl: NavController) {
 
   }
   ngOnInit(){
-       this.postService.getPosts().subscribe(data=>console.log(data));
+
   }
-   
+
 }
