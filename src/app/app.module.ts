@@ -19,7 +19,8 @@ import {MouvementModule} from '../pages/mouvements/mouvement.module';
     InscriptionComponent
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MouvementModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
