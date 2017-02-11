@@ -9,6 +9,8 @@ import {AuthentificationComponent} from '../pages/authentification/authentificat
 import {InscriptionComponent} from '../pages/inscription/inscription';
 import {MouvementModule} from '../pages/mouvements/mouvement.module';
 import {ProfilePage} from '../pages/profile/profile';
+import { LocalStorageModule } from 'angular-2-local-storage';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -22,7 +24,11 @@ import {ProfilePage} from '../pages/profile/profile';
   ],
   imports: [
     IonicModule.forRoot(MyApp),
-    MouvementModule
+    MouvementModule,
+    LocalStorageModule.withConfig({
+           prefix: 'hackathon',
+           storageType: 'localStorage'
+       })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
