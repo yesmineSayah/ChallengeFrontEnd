@@ -3,10 +3,10 @@ import { NavController } from 'ionic-angular';
 import {InscriptionComponent} from '../inscription/inscription';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-bienvenue',
+  templateUrl: 'bienvenue.html'
 })
-export class HomePage {
+export class BienvenuePage {
 
   constructor(public navCtrl: NavController) {
 

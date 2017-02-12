@@ -16,17 +16,14 @@ export class ProfileMenu {
 
   }
   ngOnInit() {
-  
+
   }
 
   editProfileRoute(){
-    this.navCtrl.setRoot(EditProfilePage,null,{animate:true,direction:"forward"});
+    this.navCtrl.push(EditProfilePage,null,{animate:true,direction:"forward"});
   }
 // changePwdRoute(){
 //     this.navCtrl.setRoot(ChangePwdPage,null,{animate:true,direction:"forward"});
 //   }
 
-  backRoute(){
-    this.navCtrl.pop();
-  }
 }

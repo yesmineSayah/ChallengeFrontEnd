@@ -5,7 +5,15 @@
 </ion-header>
 
 <ion-content  padding>
-  <ion-list inset>
+  <ion-list inset>  
+      <ion-item>
+        <ion-avatar item-center>
+          <img src="https://pickaface.net/assets/images/slides/slide2.png">
+        </ion-avatar>
+        <h2>{{user.firstName}} {{user.lastName}}</h2>
+        <h3 *ngIf="user.job">{{user.job}}</h3>
+        <p *ngIf="user.citation">{{user.citation}}</p>
+      </ion-item>
 
   <ion-item>
     <ion-label>Nom</ion-label>
@@ -26,9 +34,14 @@
     <ion-label>téléphone</ion-label>
     <ion-input type="text" [(ngModel)]="user.tel"></ion-input>
   </ion-item>
-  <ion-item *ngIf="user.citation">
+  <ion-item >
     <ion-label>Citation</ion-label>
-    <ion-input type="text" [(ngModel)]="user.citation"></ion-input>
+    <ion-input type="text" [(ngModel)]="user.citation" placeholder="Entrer votre citation"></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>Job</ion-label>
+    <ion-input type="text" [(ngModel)]="user.job" placeholder="Entrer votre Rôle"></ion-input>
   </ion-item>
 
 
