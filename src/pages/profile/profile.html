@@ -10,29 +10,30 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+
     <ion-item>
       <ion-avatar item-center>
         <img src="https://pickaface.net/assets/images/slides/slide2.png">
       </ion-avatar>
       <h2>{{user.firstName}} {{user.lastName}}</h2>
-      <h3>Job</h3>
-      <p>Citation de sharity</p>
+      <h3 *ngIf="user.job">{{user.job}}</h3>
+      <p *ngIf="user.citation">{{user.citation}}</p>
     </ion-item>
-  </ion-list>
+
+
 
 
   <ion-list>
     <ion-list-header style="font-size:15px;" color="primary">
       Informations personnels
     </ion-list-header>
-    <ion-item>Nom :
+    <ion-item *ngIf="user.firstName">Nom :
       <ion-note item-right>
         {{user.lastName}}
       </ion-note>
     </ion-item>
 
-    <ion-item>Prenom : <ion-note item-right>
+    <ion-item *ngIf="user.lastName">Prenom : <ion-note item-right>
       {{user.firstName}}
     </ion-note></ion-item>
     <ion-item>Adresse :
@@ -46,15 +47,17 @@
     <ion-list-header color="primary" style="font-size:15px;">
       Contact
     </ion-list-header>
-    <ion-item>Email :
+    <ion-item *ngIf="user.email">Email :
       <ion-note item-right>
         {{user.email}}
       </ion-note>
       </ion-item>
-    <ion-item>Telephone :
+    <ion-item *ngIf="user.tel">Telephone :
       <ion-note item-right>
           {{user.tel}}
       </ion-note>
     </ion-item>
+
+
   </ion-list>
 </ion-content>

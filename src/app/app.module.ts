@@ -12,6 +12,7 @@ import {ProfilePage} from '../pages/profile/profile';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import {ProfileMenu} from '../pages/menuProfile/menuProfile';
 import {EditProfilePage} from '../pages/editProfile/editProfile';
+import {BienvenuePage} from '../pages/bienvenue/bienvenue';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {EditProfilePage} from '../pages/editProfile/editProfile';
     InscriptionComponent,
     ProfilePage,
     ProfileMenu,
-    EditProfilePage
+    EditProfilePage,
+    BienvenuePage
 
   ],
   imports: [
@@ -46,7 +48,8 @@ import {EditProfilePage} from '../pages/editProfile/editProfile';
     InscriptionComponent,
     ProfilePage,
     ProfileMenu,
-    EditProfilePage
+    EditProfilePage,
+    BienvenuePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
