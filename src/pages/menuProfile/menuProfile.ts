@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {EditProfilePage} from '../editProfile/editProfile';
-import {ProfilePage} from '../profile/profile';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({

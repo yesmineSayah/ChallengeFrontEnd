@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MouvementDetails } from '../details/details';
 import { MouvementMy } from '../myMouvements/my';
 import { MouvementPage } from '../index/index';
 import { MouvementCreate } from '../create/create';

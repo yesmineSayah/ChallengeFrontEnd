@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MouvementMenu } from '../menu/menu';
-import { MouvementPage} from '../index/index';
 import { AlertController } from 'ionic-angular';
 import { MouvementsService} from '../../../services/mouvements.service';
 import { LocalStorageService } from 'angular-2-local-storage';

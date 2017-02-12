@@ -18,7 +18,7 @@
     <ion-icon color="secondary" name="calendar"></ion-icon> Date:
     <ion-note item-right>{{item.date}}</ion-note>
   </ion-item>
-  <h1><ion-icon color="primary" name="hand"></ion-icon> Besoins</h1>
+  <h1><ion-icon color="danger" name="hand"></ion-icon> Besoins</h1>
   <ion-list>
     <ion-item *ngFor="let n of item.needs">
       <div item-left>
@@ -30,6 +30,29 @@
       </div>
     </ion-item>
   </ion-list>
-
   <button ion-button block (click)="checkinRoute()">Je Participe !</button>
+  <h1><ion-icon color="primary" name="hand"></ion-icon> Contributions</h1>
+  <ion-list>
+    <ion-item *ngFor="let n of item.aquired">
+      <div item-left>
+        <ion-icon color="secondary" name="add-circle"></ion-icon>
+      </div>
+      <div>
+        <h2>{{n.title}}</h2>
+        <p>{{n.description}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <h1><ion-icon color="secondary" name="hand"></ion-icon> Membre du Mouvement</h1>
+  <ion-list>
+    <ion-item *ngFor="let n of item.members">
+      <div item-left>
+        <ion-icon color="primary" name="happy"></ion-icon>
+      </div>
+      <div>
+        <h2>{{n.firstName}} {{n.lastName}}</h2>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

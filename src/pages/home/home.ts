@@ -11,19 +11,19 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-  ngOnInit(){
+  ngOnInit() {
 
   }
   slides = [
-  {
-    title: "Welcome to the Docs!",
-    description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
-    image: "assets/icon/slider.jpg"
-  }
-];
+    {
+      title: "Ensemble on peut faire Plus",
+      description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
+      image: "assets/icon/slider.jpg"
+    }
+  ];
 
-inscriptionRoute(){
-  this.navCtrl.push(InscriptionComponent,null,{animate:true,direction:"forward"});
-}
+  inscriptionRoute() {
+    this.navCtrl.push(InscriptionComponent, null, { animate: true, direction: "forward" });
+  }
 
 }

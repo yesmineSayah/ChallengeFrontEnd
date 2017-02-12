@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { MouvementPage } from '../mouvements/index/index';
 import { MouvementDetails } from '../mouvements/details/details';
 import { HomePage } from '../home/home';
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
 import {MouvementCreate} from '../mouvements/create/create';
 import {MouvementEdit} from '../mouvements/edit/edit';
 import {MouvementMyDetails} from '../mouvements/myDetails/myDetails';
