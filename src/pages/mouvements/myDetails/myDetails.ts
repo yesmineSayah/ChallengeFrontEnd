@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MouvementMenu } from '../menu/menu';
+import { MouvementEdit } from '../edit/edit';
+
 @Component({
   selector: 'app-mouvementmydetails',
   templateUrl: 'myDetails.html'
@@ -16,7 +18,7 @@ export class MouvementMyDetails {
   menuRoute() {
     this.navCtrl.push(MouvementMenu);
   }
-  editRoute(item) {
-
+  editRoute() {
+    this.navCtrl.push(MouvementEdit,{item:this.item});
   }
 }

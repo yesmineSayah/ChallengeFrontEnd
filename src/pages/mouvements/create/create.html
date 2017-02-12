@@ -19,8 +19,12 @@
       <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label floating color="primary">address</ion-label>
-      <ion-textarea [(ngModel)]="mouvement.description"></ion-textarea>
+      <ion-label floating color="primary">Date</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="mouvement.date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Région Cible</ion-label>
+      <ion-textarea [(ngModel)]="mouvement.region"></ion-textarea>
     </ion-item>
   </ion-list>
   <ion-list>
@@ -55,7 +59,7 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
-<button ion-button (click)="create()" [hidden]="add" item-left>Créer</button>
-<button ion-button (click)="cancel()" color="danger" [hidden]="add" item-left>Annuler</button>
+  <button ion-button (click)="create()" [hidden]="add" item-left>Créer</button>
+  <button ion-button (click)="cancel()" color="danger" [hidden]="add" item-left>Annuler</button>
 
 </ion-content>
