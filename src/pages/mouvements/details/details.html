@@ -8,7 +8,7 @@
   <h1><ion-icon color="primary"></ion-icon> {{item.title}}</h1>
   <ion-list>
     <ion-item>
-      <ion-icon color="danger" name="pin"></ion-icon>Région Cible: {{item.region}}
+      <ion-icon color="danger" name="pin"></ion-icon> Région Cible: {{item.region}}
     </ion-item>
   </ion-list>
   <p>
@@ -30,4 +30,6 @@
       </div>
     </ion-item>
   </ion-list>
+
+  <button ion-button block (click)="checkinRoute()">Je Participe !</button>
 </ion-content>

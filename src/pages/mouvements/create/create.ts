@@ -38,7 +38,8 @@ export class MouvementCreate {
 
     var b = {
       title: this.besoin.title,
-      description: this.besoin.description
+      description: this.besoin.description,
+      quantity: this.besoin.quantity
     };
     this.besoin = {};
     this.mouvement.needs.push(b);

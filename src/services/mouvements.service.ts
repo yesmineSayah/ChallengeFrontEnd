@@ -22,7 +22,7 @@ export class MouvementsService {
       });
     }
     if (!this.storage.get('token')) {
-      this.storage.set('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlaXl1a2lAbGl2ZS5mciIsInBhc3N3b3JkIjoiJDJhJDEwJGw4dXJ1ckFFd2VGQnVFbWNEclVDLmU2empOYnhuRWpVRUV2L0lING00UTBodUJud0hoR0dXIiwiaWF0IjoxNDg2ODU4ODQzLCJleHAiOjE0ODY4NjI0NDN9.V_kO5fNou-blVDuu0vyrENaMPTpQo4b5pCP3ScLd7tU");
+      this.storage.set('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlaXl1a2lAbGl2ZS5mciIsInBhc3N3b3JkIjoiJDJhJDEwJGw4dXJ1ckFFd2VGQnVFbWNEclVDLmU2empOYnhuRWpVRUV2L0lING00UTBodUJud0hoR0dXIiwiaWF0IjoxNDg2ODc0MzE0LCJleHAiOjE0ODY4Nzc5MTR9.fEY9vh0AdSVXeCBKYGRNZZ8ZZ1ex6js6laWp9hG73t0");
     }
     return this.http.get(hostUrl + "/api/mouvements").map(response => response.json());
   }
@@ -41,6 +41,11 @@ export class MouvementsService {
     let headers = new Headers();
     this.createAuthorizationHeader(headers);
     return this.http.put(hostUrl + "/secure/mouvements/"+mouvement._id, mouvement, { headers: headers }).map(() => {});
+  }
+  updateParticpateMouvement(mouvement){
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+    return this.http.put(hostUrl + "/secure/mouvements/"+mouvement._id+"/participate", mouvement, { headers: headers }).map(() => {});
   }
   deleteMouvement(mouvement){
     let headers = new Headers();

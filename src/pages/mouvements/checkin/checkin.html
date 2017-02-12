@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Participer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2><ion-icon color="secondary" name="star"></ion-icon> Contributions</h2>
+  <ion-list>
+    <ion-item *ngFor="let a of item.aquired">{{a.title}}
+      <ion-note item-right>{{a.quantity}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <h2><ion-icon color="danger" name="hand"></ion-icon> Besoins</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>Besoin</ion-label>
+      <ion-select [(ngModel)]="besoin.title">
+        <ion-option *ngFor="let n of still" value="{{n.title}}">{{n.title}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label item-left>Quantité</ion-label>
+      <ion-input [(ngModel)]="quantity" type="number" item-right></ion-input>
+    </ion-item>
+    <button ion-button block (click)="add()">Donner</button>
+  </ion-list>
+
+  <h2><ion-icon color="secondary" name="star"></ion-icon> Contribuer</h2>
+  <ion-item>
+    <ion-label floating color="primary">Contribution</ion-label>
+    <ion-input type="text" [(ngModel)]="cont.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating color="primary">Description Contribution</ion-label>
+    <ion-textarea [(ngModel)]="cont.description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label floating color="primary">Quantité</ion-label>
+    <ion-textarea [(ngModel)]="cont.quantity"></ion-textarea>
+  </ion-item>
+  <button ion-button block (click)="addCont()">Ajouter Contribution</button>
+
+  <button ion-button block (click)="validate()">Valider</button>
+</ion-content>
