@@ -54,6 +54,10 @@
           <ion-label floating color="primary">Description Besoin</ion-label>
           <ion-textarea [(ngModel)]="besoin.description"></ion-textarea>
         </ion-item>
+        <ion-item>
+          <ion-label floating color="primary">Quantité</ion-label>
+          <ion-textarea [(ngModel)]="besoin.quantity"></ion-textarea>
+        </ion-item>
         <button ion-button (click)="addBesoin()">Ajouter</button>
         <button ion-button color="danger" (click)="toggleBesoin()">Annuler</button>
       </ion-card-content>

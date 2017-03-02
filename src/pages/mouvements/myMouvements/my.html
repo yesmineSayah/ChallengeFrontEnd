@@ -3,12 +3,17 @@
     <button ion-button menuToggle icon-only (click)="menuRoute()">
       <ion-icon name='menu'></ion-icon>
     </button>
-    <ion-title>Mes Mouvement</ion-title>
+    <ion-title>Mouvements</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content  padding>
-  <button ion-item *ngFor="let item of items" (click)="detailsRoute(item)">
-    {{ item.title }}
-  </button>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="detailsRoute(item)">
+      <ion-icon name="hand" color="secondary" item-left></ion-icon>
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+      <button ion-button clear item-right>Détails</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
